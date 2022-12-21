@@ -1,0 +1,157 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --dark-blue-main: hsl(217, 54%, 11%);
+  --dark-blue-card: hsl(216, 50%, 16%);
+  --dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.8rem;
+  color: var(--soft-blue);
+  background-color: var(--dark-blue-main);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  max-width: 35rem;
+
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: var(--dark-blue-card);
+
+}
+
+
+
+.creator {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.creator-img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.creator-text {
+  font-size: 1.6rem;
+}
+
+.creator-name {
+  color: var(--white);
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.creator-name:hover {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: color .2s;
+}
+
+h1:hover {
+  color: var(--cyan);
+}
+
+.day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day > span {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: 1.6rem;
+}
+
+.day-price {
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.main-image-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.main-image {
+  border-radius: 1rem;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.main-image-box:hover > .view {
+  opacity: 1;
+}
+
+.main-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cyan);
+  z-index: 10;
+  opacity: 0;
+  border-radius: 1rem;
+  transition: all .6s;
+}
+
+.main-image-box:hover > .main-image-overlay {
+  opacity: .7;
+}
+
+.view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 0;
+  transition: all .2s;
+  transition-delay: .2s;
+}
+
+@media only screen and (max-width: 37.5em) {
+  body {
+    padding: 5rem;
+  }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
